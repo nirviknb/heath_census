@@ -1,0 +1,237 @@
+/* ==========================================================================
+   Base Styles & Reset
+   ========================================================================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: #f0f4f8; /* Soft blue-gray background */
+    color: #333;
+    line-height: 1.6;
+}
+
+/* ==========================================================================
+   Navigation Bar
+   ========================================================================== */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0f4c75; /* Deep trustworthy blue */
+    color: white;
+    padding: 1rem 3rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+nav h1 {
+    font-size: 1.5rem;
+    letter-spacing: 0.5px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+nav ul li a {
+    color: #bbe1fa;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: white;
+}
+
+/* Nav Search Inputs */
+nav input[type="text"] {
+    padding: 0.5rem 1rem;
+    border: 1px solid #bbe1fa;
+    border-radius: 20px;
+    outline: none;
+    font-size: 0.9rem;
+    transition: box-shadow 0.3s ease;
+}
+
+nav input[type="text"]:focus {
+    box-shadow: 0 0 0 3px rgba(187, 225, 250, 0.4);
+}
+
+nav button {
+    padding: 0.5rem 1.2rem;
+    background-color: #3282b8;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+nav button:hover {
+    background-color: #2b6a96;
+}
+
+/* ==========================================================================
+   Main Container & Form Card
+   ========================================================================== */
+.container {
+    display: flex;
+    justify-content: center;
+    padding: 3rem 1rem;
+}
+
+.analysisForm {
+    background-color: white;
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+    width: 100%;
+    max-width: 550px;
+}
+
+.analysisForm h1 {
+    color: #0f4c75;
+    margin-bottom: 2rem;
+    text-align: center;
+    font-size: 1.8rem;
+    border-bottom: 2px solid #f0f4f8;
+    padding-bottom: 1rem;
+}
+
+/* ==========================================================================
+   Form Inputs & Labels
+   ========================================================================== */
+.analysisForm label {
+    display: block;
+    font-weight: 600;
+    color: #555;
+    margin-bottom: 0.5rem;
+    margin-top: 1rem;
+}
+
+.analysisForm input[type="text"],
+.analysisForm input[type="number"],
+.analysisForm select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    font-size: 1rem;
+    background-color: #fafafa;
+    transition: all 0.3s ease;
+}
+
+.analysisForm input[type="text"]:focus,
+.analysisForm input[type="number"]:focus,
+.analysisForm select:focus {
+    border-color: #3282b8;
+    background-color: white;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(50, 130, 184, 0.15);
+}
+
+/* Specific styling for the gender radio buttons row */
+.analysisForm div:nth-child(3) {
+    display: flex;
+    align-items: center;
+    margin-top: 1.5rem;
+    padding: 0.5rem 0;
+}
+
+.analysisForm div:nth-child(3) label {
+    display: inline;
+    margin-top: 0;
+    margin-right: 5px;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+.analysisForm input[type="radio"] {
+    margin-right: 20px;
+    transform: scale(1.2);
+    cursor: pointer;
+    accent-color: #3282b8;
+}
+
+/* ==========================================================================
+   Action Buttons
+   ========================================================================== */
+#addPatient {
+    background-color: #3282b8;
+    color: white;
+    border: none;
+    padding: 0.9rem;
+    font-size: 1.1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 100%;
+    font-weight: bold;
+    margin-top: 1.5rem;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+#addPatient:hover {
+    background-color: #0f4c75;
+}
+
+#addPatient:active {
+    transform: translateY(2px);
+}
+
+/* ==========================================================================
+   Report & Results Sections
+   ========================================================================== */
+.analysisForm h2 {
+    color: #0f4c75;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+#report,
+#result {
+    background-color: #f8f9fa;
+    border: 1px solid #e2e8f0;
+    padding: 1rem;
+    border-radius: 6px;
+    min-height: 60px;
+    color: #4a5568;
+    font-size: 0.95rem;
+}
+
+.searchCondition {
+    margin-top: 1.5rem;
+}
+
+/* ==========================================================================
+   Mobile Responsiveness
+   ========================================================================== */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        padding: 1.5rem;
+        gap: 1.5rem;
+    }
+    
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+    
+    .container {
+        padding: 1.5rem 1rem;
+    }
+    
+    .analysisForm {
+        padding: 1.5rem;
+    }
+}
